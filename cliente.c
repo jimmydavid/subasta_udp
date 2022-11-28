@@ -46,7 +46,8 @@ int main(int argc, char * argv[] ) {
 
 	subasta = (struct psubasta *) buffer;
 	
-	while ( htons (subasta->oferta ) != 0) {
+	// una vez que ingresa a la subasta y oferta, si desea abandonar debe ingresar el valor 0
+	while ( htons (subasta->oferta ) != 0) { 
 
 		printf ("Ingrese su oferta ");
 		fgets(teclado, sizeof(teclado) , stdin);

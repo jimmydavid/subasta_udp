@@ -54,14 +54,15 @@ int main()
 	}
 	
 	valor_ganador = 0;
-	timer = 10;
+	timer = 10; // contador para simular los 10 segundos de vigencia de la subasta
 	while (timer != 0)
 	{
 	
 		printf("Quién ofrece más de %d ...recibiendo ofertas\n",valor_ganador);
 		
-		variable = recvfrom(sd, buffer, P_SIZE, 0, (struct sockaddr *)&cliente, &lon);
-
+		//en variable se obtiene un valor distinto de -1, si llega una oferta
+		variable = recvfrom(sd, buffer, P_SIZE, 0, (struct sockaddr *)&cliente, &lon); 
+        
 		if (variable != -1)
 		{
 			
@@ -88,7 +89,7 @@ int main()
 		system("clear");
 	}
 
-	printf("Finalizó la subasta, con la siguiente oferta ganadora %d\n", subasta->mejor_oferta );
+	printf("Finalizó la subasta, con la siguiente oferta ganadora %d\n", subasta->mejor_oferta);
 	
 	close(sd);
 
