@@ -19,5 +19,5 @@ $ cc cliente.c -o clienteSubasta
 2- Ejecutar las aplicaciones
 ```
 ./servidorSubasta 
-./clienteSubasta 
+./clienteSubasta localhost
 ```
